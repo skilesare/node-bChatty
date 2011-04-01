@@ -3,7 +3,7 @@ var bChatty = require('./bChattyModel').bChatty;
 var app= require('express').createServer();
 
 app.set("view engine", "hbs");
-app.set('views','bchatty/views');
+app.set('views','node-bChatty/views');
 app.get('/', function( req,res){
 
 var options = { cache: true,

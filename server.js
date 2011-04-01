@@ -1,6 +1,6 @@
 
 var bChatty = require('./bChattyModel').bChatty;
-var express = require('express');
+var express = require('express').express;
 var app= express.createServer();
 
 app.set("view engine", "hbs");

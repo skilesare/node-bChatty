@@ -31,6 +31,7 @@ app.get('/testconvo', function(req,res){
 res.render('myview',{locals: {"name": bChatty.users["skilesare"].username}});
 setTimeout(function(){
 	res.write('Test\n');
+	console.write('HereI am')
 	res.end();
 	
 },5000);

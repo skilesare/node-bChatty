@@ -9,7 +9,7 @@
 </div>
 
 <script> 
-			 var socket = new io.Socket({node_server_url}); 
+			 var socket = new io.Socket('ec2-174-129-95-26.compute-1.amazonaws.com'); 
 			 socket.connect();
 			 socket.on('connect', function(data){ 
 			 	socket.send('Hello'); 

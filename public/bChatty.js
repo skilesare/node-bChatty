@@ -9,7 +9,7 @@ var bC = {
         type: 'post',
         data: 'username=' + newUsername + "&password=" + newPassword,
         success: function (data) {
-            AddSheetUI(SheetID, ParentID, data, 1, true);
+            },
 			
 
         error: ProcessAddedNodeError
@@ -19,4 +19,4 @@ var bC = {
 	}
 	}
 	
-}
+

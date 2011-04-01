@@ -2,5 +2,27 @@
 	"app_name" : "myapp",
 	"page_title": "bChatty"
 {{/properties}}
-<div>Username: <input type='text' id='Username' name='Username'/></div>
+<div id='logonInterface' style='display:none'>
+<div>Username: <input type='text' id='txtNewUsername' name='txtNewUsername'/></div>
+<div>Password: <input type='text' id='txtNewPassword' name='txtNewPassword'/></div>
 <input type='button' value="submit" onclick='bC.SubmitNewUser'/>
+</div>
+
+<script> 
+			 var socket = new io.Socket({node_server_url}); 
+			 socket.connect();
+			 socket.on('connect', function(data){ 
+			 	socket.send('Hello'); 
+			 
+			 }) 
+			 socket.on('message', function(data){ 
+			  alert(data);
+			  if(data.Interface)
+			  {
+			  	$('#' + data.Interface).show();
+			  }
+			  }) 
+			 socket.on('disconnect', function(data){ 
+			 	var x=1;
+			 }) 
+		</script> 

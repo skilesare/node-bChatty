@@ -44,10 +44,34 @@ socket.on('connection', function(client){
 	}
 	else
 	{
-		if(client.test){console.log(client.test);}
+		if(data.request)
+		{
+			if(data.request == "auth")
+			{
+				if(bChatty.users[data.username])
+				{
+					var authError = {error: 'Already Logged In'};
+					client.send(authError);
+					
+					
+				}
+				else
+				{
+					var newUser = bChatty.newUser(data.username,"");
+					client.bChattyUser=newUser;
+					var Welcome = {Interface: 'contextInteface'};
+					client.send(Welcome);
+					
+				}
+				
+				
+			}				
+		}
+		else
+		{
 		var notAuth = {Interface: 'logonInterface'};
-		client.send(notAuth)	;
-		client.test=1;
+		client.send(notAuth);
+		}
 	
 	}
   

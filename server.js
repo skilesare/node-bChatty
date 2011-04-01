@@ -44,8 +44,10 @@ socket.on('connection', function(client){
 	}
 	else
 	{
+		if(client.test){console.log(client.test);}
 		var notAuth = {Interface: 'logonInterface'};
-		socket.send(notAuth)	;
+		client.send(notAuth)	;
+		client.test=1;
 	
 	}
   

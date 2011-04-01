@@ -29,6 +29,11 @@ app.get('/testconvo', function(req,res){
 	bChatty.newUser("skilesare","http://a2.twimg.com/profile_images/1159752915/Twitter_Icon_mini.png");
 
 res.render('myview',{locals: {"name": bChatty.users["skilesare"].username}});
+setTimeout(function(){
+	res.write('Test\n');
+	res.end();
+	
+},5000)
 
 }
 );

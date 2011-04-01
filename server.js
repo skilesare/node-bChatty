@@ -3,7 +3,9 @@ var bChatty = require('./bChattyModel').bChatty;
 var app= require('express').createServer();
 
 app.set("view engine", "hbs");
-app.set('views','node-bChatty/views');
+//app.set('views','views');
+app.use(express.staticProvider(__dirname + '/public')); 
+
 app.get('/', function( req,res){
 
 var options = { cache: true,
@@ -29,12 +31,7 @@ app.get('/testconvo', function(req,res){
 	bChatty.newUser("skilesare","http://a2.twimg.com/profile_images/1159752915/Twitter_Icon_mini.png");
 
 res.render('myview',{locals: {"name": bChatty.users["skilesare"].username}});
-setTimeout(function(){
-	res.write('Test\n');
-	console.write('HereI am')
-	res.end();
-	
-},5000);
+
 
 }
 );

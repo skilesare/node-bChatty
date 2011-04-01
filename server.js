@@ -1,11 +1,10 @@
 
 var bChatty = require('./bChattyModel').bChatty;
-var express = require('express').express;
-var app= express.createServer();
+var app= require('express').createServer();
 
 app.set("view engine", "hbs");
 //app.set('views','views');
-app.use(express.staticProvider(__dirname + '/public')); 
+app.use(express.static(__dirname + '/public')); 
 
 app.get('/', function( req,res){
 

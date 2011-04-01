@@ -27,7 +27,7 @@ res.render('myview',{locals: {"name": bChatty.users["skilesare"].username}});
 );
 
 
-app.use("/public/",express.static(__dirname + '/public/'));
+app.use(express.static(__dirname + '/public'));
 
 app.listen(80);
 

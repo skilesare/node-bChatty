@@ -33,7 +33,7 @@ setTimeout(function(){
 	res.write('Test\n');
 	res.end();
 	
-},5000)
+},5000);
 
 }
 );

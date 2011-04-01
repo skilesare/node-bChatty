@@ -5,6 +5,7 @@ var app= express.createServer();
 
 app.set("view engine", "hbs");
 //app.set('views','views');
+console.log(__dirname);
 app.use(express.static(__dirname + '/public')); 
 
 app.get('/', function( req,res){
